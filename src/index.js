@@ -8,7 +8,6 @@ fetch('http://localhost:3000/ramens')
         renderDetail(ramen[0]);
     });
 
-
 function renderDish(dish) {
     let core = document.querySelector('#ramen-menu');
     img = document.createElement('img');
@@ -28,10 +27,8 @@ function renderDetail(dish) {
     let restaurantLoc = detail.querySelector('.restaurant');
     let ratingLoc = document.querySelector('#rating-display');
     let commentLoc = document.querySelector('#comment-display');
-
     imgLoc.src = dish.image;
     imgLoc.alt = dish.name;
-
     nameLoc.textContent = dish.name;
     restaurantLoc.textContent = dish.restaurant;
     ratingLoc.textContent = dish.rating;
@@ -49,7 +46,6 @@ form.addEventListener('submit', e => {
         rating: e.target.rating.value,
         comment: form.querySelector('#new-comment').value
     };
-
     fetch('http://localhost:3000/ramens/', {
         method: 'POST',
         headers: {
